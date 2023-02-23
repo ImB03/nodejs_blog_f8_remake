@@ -41,6 +41,7 @@
     "lint-staged": "^13.1.2",
     "method-override": "^3.0.0",
     "mongoose": "^6.9.1",
+    "mongoose-delete": "^0.5.4",
     "mongoose-slug-generator": "^1.0.4",
     "prettier": "^2.8.4"
   },

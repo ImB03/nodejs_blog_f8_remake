@@ -9,6 +9,7 @@ const port = 3005;
 const route = require("./routes");
 const db = require("./config/db");
 
+
 //connect DB
 db.connect();
 
