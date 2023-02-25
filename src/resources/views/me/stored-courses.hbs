@@ -13,7 +13,7 @@
   <option value="">-- Chọn hành động --</option>
   <option value="delete">Xóa</option>
 </select>
-<button class="btn btn-primary btn-sm check-all-submit-btn disabled">Xác nhận</button>
+<button class="btn btn-primary btn-sm check-all-submit-btn" disabled="disabled">Xác nhận</button>
 </div>
   </div>
   <table class="table mt-4">
@@ -100,7 +100,8 @@
   var checkboxAll = document.getElementById('checkbox-all')
   var courseItemCheckboxs = document.querySelectorAll('input[name="courseIds[]"]')
   var checkAllSubmitBtn = document.getElementsByClassName('check-all-submit-btn')
-  console.log(containerForm)
+  console.log(checkAllSubmitBtn[0].attributes[1])
+
  
   deleteCourseModal.addEventListener('show.bs.modal', function (event) { 
     var button = event.relatedTarget;
@@ -131,19 +132,19 @@ courseItemCheckboxs.forEach((courseItemCheckbox)=>{
   })
 })
 
-checkAllSubmitBtn.on('submit', function(e) {
-    var isSubmitable = !checkAllSubmitBtn[0].classList.contains('disabled')
-  if(!isSubmitable){
-e.preventDefault()
-  }
-})
+//containerForm.on('submit', function(e) {
+    //var isSubmitable = !checkAllSubmitBtn[0].classList.contains('disabled')
+ // if(!isSubmitable){
+//e.preventDefault()
+ // }
+//})
 
 function renderCheckAllSubmitBtn() {
 var checkedCount = document.querySelectorAll('input[name="courseIds[]"]:checked').length
 if (checkedCount){
-checkAllSubmitBtn[0].classList.remove('disabled')
+checkAllSubmitBtn[0].removeAttribute('disabled')
 } else {
-checkAllSubmitBtn[0].classList.add('disabled')
+checkAllSubmitBtn[0].setAttribute('disabled', 'disabled')
 }
 }
 
